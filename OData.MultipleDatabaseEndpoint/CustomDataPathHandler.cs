@@ -6,11 +6,11 @@ namespace OData.MultipleDatabaseEndpoint
 {
     public class CustomDataPathHandler : DefaultODataPathHandler
     {
-        private readonly IDatabaseSetter _databaseSetter;
+        private readonly IConnectionStringSetter _connectionStringSetter;
 
-        public CustomDataPathHandler(IDatabaseSetter databaseSetter)
+        public CustomDataPathHandler(IConnectionStringSetter connectionStringSetter)
         {
-            _databaseSetter = databaseSetter;
+            _connectionStringSetter = connectionStringSetter;
         }
 
         public override ODataPath Parse(IEdmModel model, string odataPath)
@@ -19,7 +19,7 @@ namespace OData.MultipleDatabaseEndpoint
             {
                 var storeName = odataPath.Substring(0, odataPath.IndexOf("/"));
                 var entityPath = odataPath.Substring(odataPath.IndexOf("/") + 1);
-                _databaseSetter.SetConnectionString(storeName + "DB");
+                _connectionStringSetter.SetConnectionString(storeName + "DB");
                 odataPath = entityPath;
             }
 

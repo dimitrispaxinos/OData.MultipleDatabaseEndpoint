@@ -13,9 +13,9 @@ namespace OData.MultipleDatabaseEndpoint.Controllers
     {
         private readonly ProductsContext _db;
 
-        public ProductsController(IDatabasePicker databasePicker)
+        public ProductsController(IConnectionStringProvider connectionStringProvider)
         {
-            _db = new ProductsContext(databasePicker.GetConnectionString());
+            _db = new ProductsContext(connectionStringProvider.GetConnectionString());
         }
 
         // GET: api/Products

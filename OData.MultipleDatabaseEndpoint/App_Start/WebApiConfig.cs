@@ -12,6 +12,8 @@ namespace OData.MultipleDatabaseEndpoint
         public static void Register(HttpConfiguration config)
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<ProductsContext>());
+            
+            //Create sample data for the demo
             DataSeeder.CreateData();
 
             UnityConfig.RegisterComponents();

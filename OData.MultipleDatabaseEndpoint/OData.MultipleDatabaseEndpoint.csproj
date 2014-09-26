@@ -109,9 +109,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="CustomDataPathHandler.cs" />
-    <Compile Include="DatabaseSetter\DatabaseSetter.cs" />
-    <Compile Include="DatabaseSetter\IDatabasePicker.cs" />
-    <Compile Include="DatabaseSetter\IDatabaseSetter.cs" />
+    <Compile Include="DatabaseSetter\ConnectionStringSetter.cs" />
+    <Compile Include="DatabaseSetter\IConnectionStringProvider.cs" />
+    <Compile Include="DatabaseSetter\IConnectionStringSetter.cs" />
     <Compile Include="DataSeeder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

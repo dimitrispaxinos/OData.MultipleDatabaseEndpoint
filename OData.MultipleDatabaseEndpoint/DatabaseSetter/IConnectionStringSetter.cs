@@ -1,6 +1,6 @@
 ﻿namespace OData.MultipleDatabaseEndpoint.DatabaseSetter
 {
-    public interface IDatabaseSetter : IDatabasePicker
+    public interface IConnectionStringSetter : IConnectionStringProvider
     {
         void SetConnectionString(string storeName);
     }

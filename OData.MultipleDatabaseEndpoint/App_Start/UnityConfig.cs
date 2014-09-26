@@ -12,10 +12,10 @@ namespace OData.MultipleDatabaseEndpoint
         public static void RegisterComponents()
         {
             UnityContainer = new UnityContainer();
-            var databaseSetter = new DatabaseSetter.DatabaseSetter();
+            var databaseSetter = new DatabaseSetter.ConnectionStringSetter();
 
-            UnityContainer.RegisterInstance<IDatabaseSetter>(databaseSetter);
-            UnityContainer.RegisterInstance<IDatabasePicker>(databaseSetter);
+            UnityContainer.RegisterInstance<IConnectionStringSetter>(databaseSetter);
+            UnityContainer.RegisterInstance<IConnectionStringProvider>(databaseSetter);
             UnityContainer.RegisterType<CustomDataPathHandler>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(UnityContainer);

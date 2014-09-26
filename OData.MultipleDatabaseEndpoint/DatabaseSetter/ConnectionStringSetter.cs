@@ -1,6 +1,6 @@
 ﻿namespace OData.MultipleDatabaseEndpoint.DatabaseSetter
 {
-    public class DatabaseSetter : IDatabaseSetter
+    public class ConnectionStringSetter : IConnectionStringSetter
     {
         public string StoreName { get; private set; }
 
